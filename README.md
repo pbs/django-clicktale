@@ -1,2 +1,2 @@
-django-clicktale
-================
+Google Analytics for Django Projects
+====================================
