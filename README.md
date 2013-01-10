@@ -1,2 +1,2 @@
-Google Analytics for Django Projects
-====================================
+ClickTale for Django Projects
+=============================
