@@ -10,7 +10,6 @@ Installation
 Just install ``django-clicktale`` via ``pip``::
 
     $ pip install django-clicktale
-
 Usage
 =====
 
@@ -26,7 +25,7 @@ CLICKTALE_PROJECT_ID (integer)
   This is the id of the project created in Clicktale
 
 CLICKTALE_RECORDING_RATIO (float)
-  The recording ratio. For more information the _Clicktale wiki
+  The recording ratio. For more information the .._Clicktale wiki
   page:http://wiki.clicktale.com/Article/Recording_Ratio can be
   consulted.
 
