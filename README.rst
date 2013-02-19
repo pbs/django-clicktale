@@ -37,5 +37,5 @@ CLICKTALE_AJAX_ENABLED (boolean)
   tracking is available only for Enterprise customer, so if you don't
   have an enterprise account set this to False
 
-.._Clicktale wiki page: http://wiki.clicktale.com/Article/Recording_Ratio
+.. _`Clicktale wiki page`: http://wiki.clicktale.com/Article/Recording_Ratio
 
