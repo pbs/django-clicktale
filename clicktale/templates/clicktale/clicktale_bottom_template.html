@@ -9,9 +9,7 @@
                 "WRd.js'%20type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-    if(typeof ClickTale=='function') ClickTale({{ project_id }},{{ recording_ratio }},{{ partition_id }});
+    if(typeof ClickTale=='function') ClickTale({{ project_id }},{{ recording_ratio }},"{{ partition_id }}");
 </script>
-{% else %}
-    <!-- ClickTale configuration not available. -->
 {% endif %}
 <!-- ClickTale end of Bottom part -->

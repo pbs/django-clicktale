@@ -15,8 +15,12 @@ def do_get_clicktale(parser, token):
         project_id = settings.CLICKTALE_PROJECT_ID
         recording_ratio = settings.CLICKTALE_RECORDING_RATIO
         partition_id = settings.CLICKTALE_PARTITION_ID
-        return ClickTaleNode(project_id=project_id, recording_ratio=recording_ratio, partition_id=partition_id,
-            template_name=template_name)
+        ajax_enabled = settings.CLICKTALE_AJAX_ENABLED
+        return ClickTaleNode(
+            project_id=project_id, recording_ratio=recording_ratio,
+            partition_id=partition_id, ajax_enabled=ajax_enabled,
+            template_name=template_name
+        )
 
     except AttributeError:
         # If not configured properly the templatetag
@@ -25,13 +29,23 @@ def do_get_clicktale(parser, token):
 
 
 class ClickTaleNode(template.Node):
-    def __init__(self, project_id=None, recording_ratio=0, partition_id=None, template_name=None):
+
+    def __init__(self, project_id=None, recording_ratio=0,
+                 partition_id=None, ajax_enabled=False,
+                 template_name=None):
         self.project_id = project_id
         self.recording_ratio = recording_ratio
         self.partition_id = partition_id
+        self.ajax_enabled = ajax_enabled
         self.template_name = template_name
 
     def render(self, context):
+        unconfigured_msg = '<!-- ClickTale configuration not available -->'
+
+        request = context['request']
+        if request.is_ajax() and not self.ajax_enabled:
+            return unconfigured_msg
+
         if self.project_id and self.partition_id:
             t = loader.get_template(self.template_name)
             c = Context({
@@ -40,8 +54,9 @@ class ClickTaleNode(template.Node):
                 'partition_id': self.partition_id
             })
             return t.render(c)
-        else:
-            return '<!-- ClickTale configuration not available -->'
+
+        return unconfigured_msg
+
 
 register.tag('clicktale_top', do_get_clicktale)
 register.tag('clicktale_bottom', do_get_clicktale)
