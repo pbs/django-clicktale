@@ -10,6 +10,15 @@ Installation
 Just install ``django-clicktale`` via ``pip``::
 
     $ pip install django-clicktale
+
+After ``django-clicktale`` is installed, ``clicktale`` application needs
+to be added to your ``INSTALLED_APPS`` in ``settings.py``:
+    INSTALLED_APPS=(
+        ...
+        'clicktale',
+        ...
+    )
+
 Usage
 =====
 
@@ -35,7 +44,8 @@ CLICKTALE_PARTITION_ID (string)
 CLICKTALE_AJAX_ENABLED (boolean)
   If this is enabled, Clicktale will track ajax request. This kind of
   tracking is available only for Enterprise customer, so if you don't
-  have an enterprise account set this to False
+  have an enterprise account set this to False. More info about this
+  issue can be found in `Clicktale Ajax wiki`_ page.
 
 .. _`Clicktale wiki page`: http://wiki.clicktale.com/Article/Recording_Ratio
-
+.. _`Clicktale Ajax wiki`: http://wiki.clicktale.com/Article/Ajax
