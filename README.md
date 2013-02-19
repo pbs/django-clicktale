@@ -1,2 +1,0 @@
-ClickTale for Django Projects
-=============================
