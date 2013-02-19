@@ -7,7 +7,7 @@ A simple Django application to integrate ClickTale into Django projects.
 Installation
 ============
 
-Just install ``django-clicktale`` via ``pip``:
+Just install ``django-clicktale`` via ``pip``::
 
     $ pip install django-clicktale
 
@@ -26,8 +26,8 @@ CLICKTALE_PROJECT_ID (integer)
   This is the id of the project created in Clicktale
 
 CLICKTALE_RECORDING_RATIO (float)
-  The recording ratio. For more information the [Clicktale wiki
-  page](http://wiki.clicktale.com/Article/Recording_Ratio) can be
+  The recording ratio. For more information the _Clicktale wiki
+  page:http://wiki.clicktale.com/Article/Recording_Ratio can be
   consulted.
 
 CLICKTALE_PARTITION_ID (string)
