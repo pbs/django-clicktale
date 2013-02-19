@@ -7,4 +7,6 @@ A simple Django application to integrate ClickTale into Django projects.
 Installation
 ============
 
-Just install ``django-clicktale`` via ``pip``::
+Just install ``django-clicktale`` via ``pip``:
+
+    $ pip install django-taggit-templatetags
