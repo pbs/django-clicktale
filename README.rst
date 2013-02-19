@@ -12,7 +12,8 @@ Just install ``django-clicktale`` via ``pip``::
     $ pip install django-clicktale
 
 After ``django-clicktale`` is installed, ``clicktale`` application needs
-to be added to your ``INSTALLED_APPS`` in ``settings.py``::
+to be added to your ``INSTALLED_APPS`` in ``settings.py`` and some 
+settings_ needs to be set::
 
     INSTALLED_APPS=(
         ...
