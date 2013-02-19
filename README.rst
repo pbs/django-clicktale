@@ -13,6 +13,7 @@ Just install ``django-clicktale`` via ``pip``::
 
 After ``django-clicktale`` is installed, ``clicktale`` application needs
 to be added to your ``INSTALLED_APPS`` in ``settings.py``:
+
     INSTALLED_APPS=(
         ...
         'clicktale',
