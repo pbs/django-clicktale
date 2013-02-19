@@ -15,8 +15,10 @@ def do_get_clicktale(parser, token):
         project_id = settings.CLICKTALE_PROJECT_ID
         recording_ratio = settings.CLICKTALE_RECORDING_RATIO
         partition_id = settings.CLICKTALE_PARTITION_ID
-        return ClickTaleNode(project_id=project_id, recording_ratio=recording_ratio, partition_id=partition_id,
-            template_name=template_name)
+        return ClickTaleNode(
+            project_id=project_id, recording_ratio=recording_ratio,
+            partition_id=partition_id, template_name=template_name
+        )
 
     except AttributeError:
         # If not configured properly the templatetag
@@ -25,7 +27,8 @@ def do_get_clicktale(parser, token):
 
 
 class ClickTaleNode(template.Node):
-    def __init__(self, project_id=None, recording_ratio=0, partition_id=None, template_name=None):
+    def __init__(self, project_id=None, recording_ratio=0,
+                 partition_id=None, template_name=None):
         self.project_id = project_id
         self.recording_ratio = recording_ratio
         self.partition_id = partition_id
@@ -42,6 +45,7 @@ class ClickTaleNode(template.Node):
             return t.render(c)
         else:
             return '<!-- ClickTale configuration not available -->'
+
 
 register.tag('clicktale_top', do_get_clicktale)
 register.tag('clicktale_bottom', do_get_clicktale)
