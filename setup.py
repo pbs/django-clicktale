@@ -4,7 +4,7 @@ setup(name='django-clicktale',
       version='1.0.1',
       description=('A simple Django application to integrate ClickTale into '
                    'your projects'),
-      long_description=open('README').read(),
+      long_description=open('README.rst').read(),
       author='TPG PBS Core Services',
       keywords="django clicktale integration",
       author_email='TPG-PBS-CoreServices@3pillarglobal.com',
