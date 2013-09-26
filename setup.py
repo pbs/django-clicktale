@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='django-clicktale',
-      version='1.0.1',
+      version='1.0.2',
       description=('A simple Django application to integrate ClickTale into '
                    'your projects'),
       long_description=open('README.rst').read(),
